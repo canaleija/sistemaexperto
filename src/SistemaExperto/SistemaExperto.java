@@ -106,6 +106,7 @@ public class SistemaExperto {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------    
 //Motor de Inferencia    
     public String inferir_regla(ExplicaciondeAcciones explicacion){
+        conocimiento();
         base.ponens();
         this.explicacion=explicacion.getExplicar();
         return this.explicacion;
@@ -114,7 +115,7 @@ public class SistemaExperto {
     public static void main(String[] args) {
         
         SistemaExperto se = new SistemaExperto();
-        MotorInferencia infiere = new MotorInferencia(base);
+        MotorInferencia infiere = new MotorInferencia();
         ExplicaciondeAcciones explica = new ExplicaciondeAcciones("");
         
         DatosEntrada valores = new DatosEntrada(new int[]{1,1,1,1,1});

@@ -25,23 +25,23 @@ public class MotorInferencia{
         //Comprobar A
         for(Regla reglas:this.base.getReglas()){
             do{
-                regla.getPremisa().setEstadoPremisa(false);
-                regla.setEstadoregla(false);
-                explica.setExplicar("La premisa es falsa");
+                this.regla.getPremisa().setEstadoPremisa(false);
+                this.regla.setEstadoregla(false);
+                this.explica.setExplicar("La premisa es falsa");
             }
             
             while(Arrays.equals(this.regla.getPremisa().getDatosPremisa().getValor(), this.hechos.getDatosHechos()));
-                regla.getPremisa().setEstadoPremisa(true);
-                explica.setExplicar("La premisa es verdadera");
+                this.regla.getPremisa().setEstadoPremisa(true);
+                this.explica.setExplicar("La premisa es verdadera");
                 
                 
-            if (regla.getPremisa().isEstadoPremisa()==true){
-                regla.getConclusion().setEstadoConclusion(true);
-                explica.setExplicar("La conclusion es verdadera");
+            if (this.regla.getPremisa().isEstadoPremisa()==true){
+                this.regla.getConclusion().setEstadoConclusion(true);
+                this.explica.setExplicar("La conclusion es verdadera");
             }
             else{
-                regla.getConclusion().setEstadoConclusion(false);
-                explica.setExplicar("La conclusion es falsa");
+                this.regla.getConclusion().setEstadoConclusion(false);
+                this.explica.setExplicar("La conclusion es falsa");
             }
             
             if(regla.getConclusion().isEstadoConclusion()==true){
